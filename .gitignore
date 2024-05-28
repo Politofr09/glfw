@@ -105,3 +105,4 @@ tests/windows
 bin/GLFW/GLFW.idb
 bin/GLFW/GLFW.lib
 bin/GLFW/GLFW.pdb
+bin/glfw/glfw.lib.lastcodeanalysissucceeded
