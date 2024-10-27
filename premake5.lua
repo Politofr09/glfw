@@ -100,20 +100,13 @@ project "glfw"
 		}
 
 	filter "configurations:Debug"
+		symbols "On"
+		optimize "Off"  -- Turn off optimization for debug builds
+		staticruntime "on"
 		runtime "Debug"
-		symbols "on"
-
-	filter { "system:windows", "configurations:Debug-AS" }	
-		runtime "Debug"
-		symbols "on"
-		sanitize { "Address" }
-		flags { "NoRuntimeChecks", "NoIncrementalLink" }
-
+	
 	filter "configurations:Release"
+		symbols "Off"
+		optimize "On"  -- Full optimization for release builds
+		staticruntime "off"
 		runtime "Release"
-		optimize "speed"
-
-    filter "configurations:Dist"
-		runtime "Release"
-		optimize "speed"
-        symbols "off"
